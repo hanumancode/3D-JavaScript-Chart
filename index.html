@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D JavaScript Chart with Plotly.js</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+	
+	<div class="navbar"><span>3D JavaScript Chart with Plotly.js</span></div>
+	
+	<div class="wrapper" style="width:100%;height:100%;">
+
+
+		<div id="chart" style="width:100%;height:100%;">
+			
+		</div>
+	</div>
+
+<script>
+
+	function getData() {
+		var arr = [];
+		for (let i = 0; i <10; i++) {
+			arr.push(Array(10).fill().map(() => Math.random()));
+		}
+
+		return arr;
+	}
+
+	console.log(getData());
+
+	// TESTER = document.getElementById('chart');
+	Plotly.plot( 'chart', [{
+	z: getData(),
+	type: 'surface'
+	}]);
+</script>
+
+</body>
+</html>
